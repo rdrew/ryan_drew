@@ -124,7 +124,7 @@ body {
   font-weight: 400;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #CDCDCD;
-  background: #222; }
+  background: #1a1a1a; }
 
 
 /* Typography
@@ -133,7 +133,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0rem;
   font-weight: 300; }
-h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem;  text-transform: uppercase;}
+h1 { /*font-size: 4.0rem;*/font-size: 4.4rem; line-height: 1.2;  letter-spacing: -.1rem;  text-transform: uppercase;}
 h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; }
 h3 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem; }
 h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
@@ -142,7 +142,7 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
 
 /* Larger than phablet */
 @media (min-width: 550px) {
-  h1 { font-size: 4rem; }
+  h1 { font-size: 4.4rem; }
   h2 { font-size: 4.2rem; }
   h3 { font-size: 3.6rem; }
   h4 { font-size: 3.0rem; }
@@ -160,7 +160,8 @@ p {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
   color: #CDCDCD;
-  text-decoration: none; }
+  text-decoration: none;
+   }
 a:hover {
   color: #0FA0CE;
   text-decoration: underline; }
@@ -442,18 +443,50 @@ on small devices, paste the mobile query code up in the buttons section and styl
 there.
 */
 
+.menu h1 {
+  font-size: 3.4rem;
+}
+nav.icons i {
+    padding-right: 15px;
+  }
+  nav.icons {
+    padding-top: 10px;
+  }
+.menu {
+  margin-left: 10px;
+}
 
 /* Larger than mobile */
-@media (min-width: 400px) {}
+@media (min-width:400px) {
+}
 
 /* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
+@media (min-width:550px) {
+}
 
 /* Larger than tablet */
-@media (min-width: 750px) {}
+@media (min-width:750px) {
+  .image {
+    width: 60%;
+    float: left;
+    border-right: 2px solid;
+    margin-right: 10px;
+  }
+  .menu {
+  margin-left: 10px;
+}
+  nav.icons {
+    text-align: right;
+    padding-top: 5px;
+  }
+}
 
 /* Larger than desktop */
-@media (min-width: 1000px) {}
+@media (min-width:1000px) {
+  .menu h1 {
+    font-size: 4.4rem;
+  }
+}
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
@@ -462,20 +495,18 @@ body { padding: 0 20px; }
 header { max-width: 960px; margin: 0 auto; }
 div.site-name { border-left: 2px solid; padding: 10px 0px 10px 10px; }
 img { max-width: 100%; }
-.image { width: 60%; float: left; border-right: 2px solid; margin-right: 10px; }
+/*.image { width: 60%; float: left; border-right: 2px solid; margin-right: 10px; }*/
 .image img { display: block; }
-.menu li { margin: 7px 0px; }
+.menu li { margin-bottom: 0px;}
 .banner.u-cf { border: 2px solid; margin-bottom: 20px; width: 100% }
-.menu h1 { margin: 0; line-height: 109%; }
+.menu h1 { margin: 0; /*line-height: 109%;*/ }
 ul { list-style: none; margin-bottom: 0; }
 article { max-width: 960px; margin: 0 auto; }
 article p { font-size: 2.3rem; line-height: 157%; }
-nav.icons { text-align: right;
-            padding-top: 5px; }
-nav.icons i { padding-left: 15px; }
-.menu li {
-margin: 18px;
-}
+
+/*.menu li {
+margin: 8px;
+}*/
 article h1, article h3 {
 margin-top: 40px;
 margin-bottom: 5px;
@@ -510,6 +541,115 @@ border-radius: 4px;
 }
 
 /*-----  End of image gallery  ------*/
+/*=======================================
+=            menu animations            =
+=======================================*/
+
+/*base code*/
+
+.animated:hover {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite:hover {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.animated.hinge:hover {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+/*the animation definition*/
+
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg)
+  }
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg)
+  }
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg)
+  }
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg)
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg)
+  }
+}
+
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    -ms-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg)
+  }
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    -ms-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg)
+  }
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    -ms-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg)
+  }
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    -ms-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg)
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    -ms-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg)
+  }
+}
+
+.swing:hover {
+  -webkit-transform-origin: top center;
+  -ms-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  animation-name: swing
+}
+
+
+/*-----  End of menu animations  ------*/
+
+
+/*=================================================
+=            styles for the new banner            =
+=================================================*/
+
+.menu.right h1 {
+    text-align: right;
+}
+
+.banner.full {
+    background-image: url("images/ryanbanner.jpg");
+    background-size: 100%;
+    height: 531px;
+    background-repeat: no-repeat;
+}
+
+.menu.right h1 {
+    font-size: 7rem;
+}
+
+/*-----  End of styles for the new banner  ------*/
+
 
 
 
