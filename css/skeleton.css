@@ -451,9 +451,16 @@ nav.icons i {
   }
   nav.icons {
     padding-top: 10px;
+    display: none;
   }
 .menu {
   margin-left: 10px;
+}
+.title h3 {
+  font-size: 2.6rem;
+}
+.image {
+  border-bottom: 2px solid #fff;
 }
 
 /* Larger than mobile */
@@ -462,6 +469,7 @@ nav.icons i {
 
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width:550px) {
+  
 }
 
 /* Larger than tablet */
@@ -471,6 +479,7 @@ nav.icons i {
     float: left;
     border-right: 2px solid;
     margin-right: 10px;
+    border-bottom: 0px;
   }
   .menu {
   margin-left: 10px;
@@ -478,7 +487,12 @@ nav.icons i {
   nav.icons {
     text-align: right;
     padding-top: 5px;
+    display: initial;
   }
+  .title h3 {
+  font-size: 3.6rem;
+}
+
 }
 
 /* Larger than desktop */
@@ -495,6 +509,7 @@ body { padding: 0 20px; }
 header { max-width: 960px; margin: 0 auto; }
 div.site-name { border-left: 2px solid; padding: 10px 0px 10px 10px; }
 img { max-width: 100%; }
+
 /*.image { width: 60%; float: left; border-right: 2px solid; margin-right: 10px; }*/
 .image img { display: block; }
 .menu li { margin-bottom: 0px;}
